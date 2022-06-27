@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integrador</title>
+</head>
+<body>
+    <h1>EJERCICIO INTEGRADOR JAVASCRIPT</h1>
+    <script>
+        // 1- Crea un Array que contenga 4 objetos con nombre y su precio: dos de
+        // ellos menos a 1000, otro de 600 y otro de 1500
+        let celulares = [
+        {nombre:'Iphone', valor: 1500}, 
+        {nombre:'Motorola', valor: 700}, 
+        {nombre:'Samsung', valor:600}, 
+        {nombre:'Nokia', valor:400}];
+        
+
+        // 2- Recorre el array y busca el primer elemento cuyo precio es 600
+        //document.write('<br>')
+        
+        let encontrando = celulares.find(function(celular){
+            return celular.valor === 600;
+        });
+        console.log(encontrando);
+        
+
+        // 3- Busca todos los elementos cuyo precio sea menor que 1000
+        let filtrandoMenor = celulares.filter(function(celular){
+            return celular.valor < 1000;
+        });
+        console.log(filtrandoMenor);
+        
+        // 4- Crea una copia del array anterior pero que contenga solo los precios de
+        // los productos
+        let mapeando = celulares.map(function(celular){
+            return 'Precio:' + celular.valor
+        });
+        console.log(mapeando);
+        
+        // 5- Crea una copia del array anterior que contenga el nombre de los
+        // productos y los precios aumentados en un 50%
+        let mapeandoaumento = celulares.map(function(celular){
+            return 'Nombre:'+ celular.nombre +' '+ 'Precio:' + ((celular.valor * 0.5) + celular.valor)
+        });
+        console.log(mapeandoaumento);
+
+
+
+    </script>
+
+    
+</body>
+</html>
